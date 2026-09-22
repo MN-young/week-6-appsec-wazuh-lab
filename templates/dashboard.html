@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureOps | Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="brand">
+            <div class="brand-icon">S</div>
+
+            <div>
+                <h1>SecureOps</h1>
+                <span>Operations Dashboard</span>
+            </div>
+        </div>
+
+        <a class="nav-login" href="{{ url_for('logout') }}">
+            Sign Out
+        </a>
+    </header>
+
+
+    <main class="dashboard-page">
+
+        <section class="dashboard-header">
+
+            <div>
+                <div class="status-badge">
+                    ● Secure Session Active
+                </div>
+
+                <h2>
+                    Welcome,
+                    <span>{{ user }}</span>
+                </h2>
+
+                <p>
+                    Your SecureOps workspace provides access
+                    to employee services and security operations.
+                </p>
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-grid">
+
+            <a
+                class="dashboard-card"
+                href="{{ url_for('directory') }}"
+            >
+                <div class="dashboard-card-icon">01</div>
+
+                <h3>Employee Directory</h3>
+
+                <p>
+                    Search internal employee records,
+                    departments and roles.
+                </p>
+
+                <span>
+                    Open Directory →
+                </span>
+            </a>
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-icon">02</div>
+
+                <h3>Security Operations</h3>
+
+                <p>
+                    Centralised monitoring and security
+                    visibility across internal systems.
+                </p>
+
+                <div class="service-status">
+                    <span></span>
+                    Monitoring Active
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-icon">03</div>
+
+                <h3>System Health</h3>
+
+                <p>
+                    View the status of critical internal
+                    business and security services.
+                </p>
+
+                <div class="service-status">
+                    <span></span>
+                    All Systems Operational
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="activity-panel">
+
+            <div class="activity-header">
+
+                <div>
+                    <p>SECURITY OPERATIONS</p>
+                    <h3>Recent Activity</h3>
+                </div>
+
+                <span class="online">
+                    LIVE
+                </span>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <span class="activity-dot"></span>
+
+                <div>
+                    <strong>Authentication successful</strong>
+                    <p>
+                        Secure employee session established.
+                    </p>
+                </div>
+
+                <span class="activity-status">
+                    SUCCESS
+                </span>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <span class="activity-dot"></span>
+
+                <div>
+                    <strong>Directory service available</strong>
+                    <p>
+                        Employee directory is operational.
+                    </p>
+                </div>
+
+                <span class="activity-status">
+                    ONLINE
+                </span>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <span class="activity-dot"></span>
+
+                <div>
+                    <strong>Security monitoring active</strong>
+                    <p>
+                        SecureOps monitoring services are running.
+                    </p>
+                </div>
+
+                <span class="activity-status">
+                    ACTIVE
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
