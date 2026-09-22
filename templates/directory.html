@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureOps | Employee Directory</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="brand">
+            <div class="brand-icon">S</div>
+
+            <div>
+                <h1>SecureOps</h1>
+                <span>Employee Directory</span>
+            </div>
+        </div>
+
+        <div class="nav-actions">
+
+            <a
+                class="nav-login"
+                href="{{ url_for('dashboard') }}"
+            >
+                Dashboard
+            </a>
+
+            <a
+                class="nav-login"
+                href="{{ url_for('logout') }}"
+            >
+                Sign Out
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="directory-page">
+
+        <section class="directory-header">
+
+            <div class="status-badge">
+                ● Internal Directory Service
+            </div>
+
+            <h2>Employee Directory</h2>
+
+            <p>
+                Search SecureOps personnel by username.
+            </p>
+
+        </section>
+
+
+        <section class="directory-search">
+
+            <form method="POST">
+
+                <label for="username">
+                    Search username
+                </label>
+
+                <div class="search-row">
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Example: aokafor"
+                        value="{{ search }}"
+                    >
+
+                    <button type="submit">
+                        Search Directory
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        {% if search %}
+
+        <section class="results-panel">
+
+            <div class="results-header">
+
+                <div>
+                    <p>SEARCH RESULTS</p>
+                    <h3>
+                        Results for "{{ search }}"
+                    </h3>
+                </div>
+
+                <span>
+                    {{ employees|length }} found
+                </span>
+
+            </div>
+
+
+            {% if employees %}
+
+            <div class="employee-table">
+
+                <div class="table-row table-heading">
+
+                    <span>Name</span>
+                    <span>Username</span>
+                    <span>Department</span>
+                    <span>Role</span>
+
+                </div>
+
+
+                {% for employee in employees %}
+
+                <div class="table-row">
+
+                    <span>
+                        {{ employee["name"] }}
+                    </span>
+
+                    <span>
+                        {{ employee["username"] }}
+                    </span>
+
+                    <span>
+                        {{ employee["department"] }}
+                    </span>
+
+                    <span>
+                        {{ employee["role"] }}
+                    </span>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+
+            {% else %}
+
+            <div class="empty-result">
+
+                <strong>No employee found.</strong>
+
+                <p>
+                    Try another username.
+                </p>
+
+            </div>
+
+            {% endif %}
+
+        </section>
+
+        {% endif %}
+
+    </main>
+
+</body>
+</html>
