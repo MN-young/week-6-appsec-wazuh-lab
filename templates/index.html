@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureOps | Employee Portal</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="brand">
+            <div class="brand-icon">S</div>
+
+            <div>
+                <h1>SecureOps</h1>
+                <span>Employee Portal</span>
+            </div>
+        </div>
+
+        <a class="nav-login" href="{{ url_for('login') }}">
+            Employee Login
+        </a>
+    </header>
+
+
+    <main class="hero">
+
+        <section class="hero-content">
+
+            <div class="status-badge">
+                ● Internal Systems Online
+            </div>
+
+            <h2>
+                Security starts with
+                <span>visibility.</span>
+            </h2>
+
+            <p>
+                SecureOps provides employees with secure access to
+                internal resources, directory services and security
+                operations tools.
+            </p>
+
+            <div class="hero-actions">
+
+                <a
+                    class="primary-button"
+                    href="{{ url_for('login') }}"
+                >
+                    Access Employee Portal
+                </a>
+
+                <a
+                    class="secondary-button"
+                    href="#platform"
+                >
+                    Learn More
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section class="security-panel">
+
+            <div class="panel-header">
+                <span>SECURITY STATUS</span>
+                <span class="online">OPERATIONAL</span>
+            </div>
+
+            <div class="metric">
+
+                <div>
+                    <strong>SOC Monitoring</strong>
+                    <p>Continuous security visibility</p>
+                </div>
+
+                <span class="check">✓</span>
+
+            </div>
+
+
+            <div class="metric">
+
+                <div>
+                    <strong>Identity Services</strong>
+                    <p>Employee access management</p>
+                </div>
+
+                <span class="check">✓</span>
+
+            </div>
+
+
+            <div class="metric">
+
+                <div>
+                    <strong>Directory Services</strong>
+                    <p>Internal employee search</p>
+                </div>
+
+                <span class="check">✓</span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <section class="features" id="platform">
+
+        <div class="section-heading">
+            <p>SECUREOPS PLATFORM</p>
+            <h3>One portal. One secure workspace.</h3>
+        </div>
+
+
+        <div class="feature-grid">
+
+            <article class="feature-card">
+                <div class="feature-number">01</div>
+                <h4>Employee Directory</h4>
+                <p>
+                    Search internal employee records and
+                    organisational information.
+                </p>
+            </article>
+
+
+            <article class="feature-card">
+                <div class="feature-number">02</div>
+                <h4>Security Operations</h4>
+                <p>
+                    Centralised visibility into security
+                    operations and monitoring.
+                </p>
+            </article>
+
+
+            <article class="feature-card">
+                <div class="feature-number">03</div>
+                <h4>Internal Access</h4>
+                <p>
+                    Controlled access to internal systems
+                    and employee resources.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        <p>
+            SecureOps Internal Systems
+            &nbsp;•&nbsp;
+            Authorized Personnel Only
+        </p>
+
+        <span>
+            Week 6 AppSec Security Lab
+        </span>
+    </footer>
+
+</body>
+</html>
