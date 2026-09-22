@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureOps | Employee Login</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="brand">
+            <div class="brand-icon">S</div>
+
+            <div>
+                <h1>SecureOps</h1>
+                <span>Employee Portal</span>
+            </div>
+        </div>
+
+        <a class="nav-login" href="{{ url_for('home') }}">
+            Back to Home
+        </a>
+    </header>
+
+
+    <main class="login-page">
+
+        <section class="login-card">
+
+            <div class="login-heading">
+                <div class="status-badge">
+                    ● Secure Employee Access
+                </div>
+
+                <h2>Welcome back.</h2>
+
+                <p>
+                    Sign in to access SecureOps internal systems.
+                </p>
+            </div>
+
+            {% if error %}
+                <div class="error-message">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <form method="POST">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    required
+                >
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+                <button type="submit">
+                    Sign In
+                </button>
+
+            </form>
+
+            <div class="login-footer">
+                SecureOps Internal Systems
+                <br>
+                Authorized Personnel Only
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
