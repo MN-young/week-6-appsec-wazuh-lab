@@ -1,0 +1,29 @@
+name: SecureOps Semgrep Security Scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  semgrep:
+    name: Semgrep SAST Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout SecureOps source code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Semgrep
+        run: pip install semgrep
+
+      - name: Run Semgrep security scan
+        run: semgrep scan --config auto .
