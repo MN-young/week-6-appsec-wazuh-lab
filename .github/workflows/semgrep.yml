@@ -25,5 +25,14 @@ jobs:
       - name: Install Semgrep
         run: pip install semgrep
 
-      - name: Run Semgrep security scan
+      - name: Run Semgrep and export JSON findings
+        run: semgrep scan --config auto --json --output semgrep-results.json .
+
+      - name: Upload Semgrep findings
+        uses: actions/upload-artifact@v4
+        with:
+          name: semgrep-security-findings
+          path: semgrep-results.json
+
+      - name: Enforce Semgrep security gate
         run: semgrep scan --config auto --error .
