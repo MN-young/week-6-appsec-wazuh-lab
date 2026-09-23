@@ -26,4 +26,4 @@ jobs:
         run: pip install semgrep
 
       - name: Run Semgrep security scan
-        run: semgrep scan --config auto .
+        run: semgrep scan --config auto --error .
