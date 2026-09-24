@@ -37,7 +37,7 @@ jobs:
       - name: Enforce Semgrep security gate
         run: semgrep scan --config auto --error .
 
-        dependency-scan:
+  dependency-scan:
     name: pip-audit Dependency Scan
     runs-on: ubuntu-latest
 
