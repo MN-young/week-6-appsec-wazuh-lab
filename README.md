@@ -15,4 +15,4 @@ Standalone source repository for the Week 6 SecureOps training application and i
 
 ## Portfolio documentation
 
-The complete Week 6 architecture, Wazuh Rules `100202` and `100203`, Shuffle/Slack routing, troubleshooting record, validation, reflection, and curated evidence are maintained with Weeks 1–5 in the [Security Engineering Mentorship Labs Week 6 project](https://github.com/MN-young/security-engineering-mentorship-labs/tree/main/week-6-appsec-wazuh-integration).
+The complete Week 6 architecture, Wazuh Rules `100202` and `100203`, Shuffle/Slack routing, troubleshooting record, validation, reflection, and curated evidence are maintained with Weeks 1–5 in the [Security Engineering Mentorship Labs Week 6 project](https://github.com/MN-young/security-engineering-mentorship-labs/tree/main/week-06-appsec-wazuh-integration).
