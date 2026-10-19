@@ -16,3 +16,14 @@ Standalone source repository for the Week 6 SecureOps training application and i
 ## Portfolio documentation
 
 The complete Week 6 architecture, Wazuh Rules `100202` and `100203`, Shuffle/Slack routing, troubleshooting record, validation, reflection, and curated evidence are maintained with Weeks 1–5 in the [Security Engineering Mentorship Labs Week 6 project](https://github.com/MN-young/security-engineering-mentorship-labs/tree/main/week-06-appsec-wazuh-integration).
+## Week 8 Integration Verification
+
+During Week 8, the existing Semgrep and pip-audit
+security integrations were retested against the
+central Wazuh Manager.
+
+Both detection rules and live alert forwarding
+were successfully validated.
+
+The GitHub Actions workflow is being rechecked
+to confirm that the CI/CD security gate remains active.
